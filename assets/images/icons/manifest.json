@@ -1,0 +1,20 @@
+{
+    "name": "تطبيق المندوب-الزعيم",
+    "short_name": "تطبيق المندوب-الزعيم",
+   "start_url": "/driver/",
+	 "icons": [
+        {
+            "src": "/driver/pwa/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/driver/pwa/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#9575cd",
+    "background_color": "#9575cd",
+    "display": "standalone"
+}
