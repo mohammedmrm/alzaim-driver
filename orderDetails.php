@@ -82,55 +82,188 @@ include_once("config.php");
             <div id="status" class="col s12 ">
               <div class="" id="status_update">
                 <div class="content-boxed top-5 bottom-5">
-                  <div class="one-half">
-                    <div class="bottom-5 color-white font-20 link-list link-list-1 bg-green1-light rounded">
-                      <a href="#" class="link" data-menu="recived">
-                        <span class="text-center color-white left-0 right-0 top-10 bottom-10">تم التسليم</span>
-                      </a>
-                    </div>
+                  <div class="bot-20 col s12" style="margin-top: 20px;">
+                    <a class="col s12 waves-effect waves-light btn modal-trigger" href="#recived">واصل</a>
                   </div>
-                  <div class="one-half last-column">
-                    <div class="bottom-5 color-white font-20 link-list link-list-1 bg-brown1-dark rounded">
-                      <a href="#" data-menu="returned" class="link">
-                        <span class="text-center color-white left-0 right-0 top-10 bottom-10">راجع جزئي</span>
-                      </a>
-                    </div>
+                  <div class="bot-20 col s12">
+                    <a class=" col s12 waves-effect waves-light red btn modal-trigger" href="#fake">راجع كلي</a>
                   </div>
-                  <div class="clear"></div>
-                  <div class="one-half">
-                    <div class="bottom-5 color-white font-20 link-list link-list-1 bg-orange-light rounded">
-                      <a href="#" data-menu="posponded" class="link">
-                        <span class="text-center color-white left-0 right-0 top-10 bottom-10">مؤجل</span>
-                      </a>
-                    </div>
+                  <div class="bot-20 col s12">
+                    <a class="col s12 waves-effect waves-light orange btn modal-trigger" href="#posponded">مؤجل</a>
                   </div>
-                  <div class="one-half last-column">
-                    <div class="bottom-5 color-white font-20 link-list link-list-1 bg-blue1-light rounded">
-                      <a href="#" data-menu="change" class="link">
-                        <span class="text-center color-white left-0 right-0 top-10 bottom-10">تغير العنوان</span>
-                      </a>
-                    </div>
+                  <div class="bot-20 col s12">
+                    <a class="bot-10 col s12 waves-effect waves-light brown btn modal-trigger" href="#returned">راجع جزئي</a>
                   </div>
-                  <div class="clear"></div>
-                  <div class="one-half">
-                    <div class="bottom-5 color-white font-20 link-list link-list-1 bg-yellow1-dark rounded">
-                      <a href="#" data-menu="replace" class="link">
-                        <span class="text-center color-white left-0 right-0 top-10 bottom-10">استبدال</span>
-                      </a>
-                    </div>
+                  <div class="bot-20 col s12">
+                    <a class="top-10 col s12  waves-effect waves-light yellow btn modal-trigger" href="#replace">استبدال</a>
                   </div>
-                  <div class="one-half last-column">
-                    <div class="bottom-5 color-white font-20 link-list link-list-1 bg-red1-dark rounded">
-                      <a href="#" data-menu="fake" class="link">
-                        <span class="text-center color-white left-0 right-0 top-10 bottom-10">راجع كلي</span>
-                      </a>
-                    </div>
+                  <div class="bot-20 col s12">
+                    <a class="col s12 waves-effect waves-light blue-grey btn btn-large modal-trigger" href="#change">نغير عنوان</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div id="recived" class="modal">
+    <div class="modal-content">
+      <h4>تفاصيل الطلب</h4>
+      <h2 class="uppercase ultrabold text-center top-20">تم تسليم الطلبية ؟</h2>
+      <p class="font-11 under-heading text-center bottom-20">يجب ادخال السعر المستلم</p>
+      <p class="font-16 under-heading text-center bottom-20 red-text" id="err_msg"></p>
+      <div class="input-style has-icon input-style-1 input-required bottom-30">
+        <span class="input-style-1-inactive">المبلغ المستلم</span>
+        <input type="number" step="250" id="new_price" name="new_price" placeholder="المبلغ المستلم">
+        <input type="hidden" id="order_price" />
+      </div>
+      <div class="input-style input-style-1 input-required">
+        <span class="input-style-1-inactive">ملاحظات</span>
+        <textarea id="note" name="note" placeholder="ملاحظات"></textarea>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" onclick="recived()" class="waves-effect waves-red btn-flat">تحديث حالة الطلب</button>
+      <button type="button" class="modal-close waves-effect waves-green btn-flat" data-dismiss="modal">اغلاق</button>
+    </div>
+  </div>
+
+  <div id="returned" class="modal">
+    <div class="modal-content">
+      <h4>تفاصيل الطلب</h4>
+      <h2 class="uppercase ultrabold text-center top-20">تم تسليم الطلبية ؟</h2>
+      <p class="font-11 under-heading text-center bottom-20">يجب ادخال السعر المستلم</p>
+      <p class="font-16 under-heading text-center bottom-20 red-text" id="err_msg"></p>
+      <div class="input-style has-icon input-style-1 input-required bottom-30">
+        <span class="input-style-1-inactive">المبلغ المستلم</span>
+        <input type="number" step="250" id="new_price" name="new_price" placeholder="المبلغ المستلم">
+        <input type="hidden" id="order_price" />
+      </div>
+      <div class="input-style input-style-1 input-required">
+        <span class="input-style-1-inactive">ملاحظات</span>
+        <textarea id="note" name="note" placeholder="ملاحظات"></textarea>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" onclick="returned()" class=" waves-effect waves-red btn-flat">تحديث حالة الطلب</button>
+      <button type="button" class="modal-close waves-effect waves-green btn-flat" data-dismiss="modal">اغلاق</button>
+    </div>
+  </div>
+  <div id="fake" class="modal">
+    <div class="modal-content">
+      <h2 class="uppercase ultrabold text-center top-20 color-red1-dark">راجع كلي</h2>
+      <p class="font-11 under-heading text-center bottom-20">يجب ذكر السبب</p>
+      <p class="font-16 under-heading text-center bottom-20 red-text" id="err_msg_fake"></p>
+      <div class="input-style input-style-1 input-required">
+        <span class="input-style-1-inactive">السبب</span>
+        <select name="note_fake" id="note_fake" class="form-control">
+          <option value="">-- السبب --</option>
+          <option value="لايرد">لايرد</option>
+          <option value="لايرد مع رسالة">لايرد مع رسالة</option>
+          <option value="تم اغلاق الهاتف">تم اغلاق الهاتف</option>
+          <option value="رفض الطلب">رفض الطلب</option>
+          <option value="مكرر">مكرر</option>
+          <option value="كاذب">كاذب</option>
+          <option value="الرقم غير معرف">الرقم غير معرف</option>
+          <option value="رفض الطلب">رفض الطلب</option>
+          <option value="حظر المندوب">حظر المندوب</option>
+          <option value="لايرد بعد التاجيل">لايرد بعد التاجيل</option>
+          <option value="مسافر">مسافر</option>
+          <option value="تالف">تالف</option>
+          <option value="راجع بسبب الحظر">راجع بسبب الحظر</option>
+          <option value="لايمكن الاتصال به">لايمكن الاتصال به</option>
+          <option value="مغلق بعد الاتفاق">مغلق بعد الاتفاق</option>
+          <option value="مستلم سابقا">مستلم سابقا</option>
+          <option value="لم يطلب">لم يطلب</option>
+          <option value="لايرد بعد سماع المكالمة">لايرد بعد سماع المكالمة</option>
+          <option value="غلق بعد سماع المكالمة">غلق بعد سماع المكالمة</option>
+          <option value="مغلق">مغلق</option>
+          <option value="تم الوصول والرفض">تم الوصول والرفض</option>
+          <option value="لايرد بعد الاتفاق">لايرد بعد الاتفاق</option>
+          <option value="غير داخل بالخدمة">غير داخل بالخدمة</option>
+          <option value="خطأ بالعنوان">خطأ بالعنوان</option>
+          <option value="مستلم سابقا">مستلم سابقا</option>
+          <option value="خطأ بالتجهيز">خطأ بالتجهيز</option>
+          <option value="نقص رقم">نقص رقم</option>
+          <option value="زيادة رقم">زيادة رقم</option>
+          <option value="وصل بدون طلبية">وصل بدون طلبية</option>
+        </select>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" onclick="fake()" class="waves-effect waves-red btn-flat">تحديث حالة الطلب</button>
+      <button type="button" class="modal-close waves-effect waves-green btn-flat" data-dismiss="modal">اغلاق</button>
+    </div>
+  </div>
+
+  <div id="replace" class="modal">
+    <div class="modal-content">
+      <h2 class="uppercase ultrabold text-center top-20 color-yellow1-dark">استبدال الطلب ؟</h2>
+      <p class="font-11 under-heading text-center bottom-20">يجب ادخال السعر المستلم</p>
+      <p class="font-16 under-heading text-center bottom-20 red-text" id="err_msg_replace1"></p>
+      <p class="font-16 under-heading text-center bottom-20 red-text" id="err_msg_replace2"></p>
+      <p class="font-16 under-heading text-center bottom-20 red-text" id="err_msg_replace3"></p>
+      <div class="input-style has-icon input-style-1 input-required bottom-30">
+        <span class="input-style-1-inactive">المبلغ المستلم</span>
+        <input type="number" step="250" id="new_price_re" name="new_price_re" placeholder="المبلغ المستلم">
+      </div>
+      <div class="input-style has-icon input-style-1 input-required bottom-30">
+        <span class="input-style-1-inactive">عدد القطع </span>
+        <input type="number" step="250" id="repalce_no" name="repalce_no" placeholder="عدد القطع ">
+      </div>
+      <div class="input-style input-style-1 input-required">
+        <span class="input-style-1-inactive">ملاحظات</span>
+        <textarea id="note_re" name="note_re" placeholder="ملاحظات"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" onclick="replace()" class=" waves-effect waves-red btn-flat">تحديث حالة الطلب</button>
+      <button type="button" class="modal-close waves-effect waves-green btn-flat" data-dismiss="modal">اغلاق</button>
+    </div>
+  </div>
+  <div id="change" class="modal">
+    <div class="modal-content">
+      <h2 class="uppercase ultrabold text-center top-20 color-blue1-dark">تغير عنوان الطلبية؟</h2>
+      <p class="font-16 under-heading text-center bottom-20 red-text" id="err_msg_change"></p>
+      <div class="input-style input-style-1 input-required">
+        <span class="input-style-1-inactive">المحافظه</span>
+        <select class="form-control" onchange="getTowns($('#town'),$(this).val())" id="city" name="city"></select>
+      </div>
+      <div class="input-style input-style-1 input-required">
+        <span class="input-style-1-inactive">المنطقة</span>
+        <select class="form-control" id="town" name="town"></select>
+      </div>
+      <div class="input-style input-style-1 input-required">
+
+        <textarea id="address" name="address" placeholder="تفاصيل العنوان"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" onclick="change()" class="modal-close waves-effect waves-red btn-flat">تحديث حالة الطلب</button>
+      <button type="button" class="waves-effect waves-green btn-flat" data-dismiss="modal">اغلاق</button>
+    </div>
+  </div>
+
+
+  <div id="posponded" class="modal">
+    <div class="modal-content">
+      <div class="content">
+        <h2 class="uppercase ultrabold text-center top-20 color-orange-dark">تأجيل الطلبية؟</h2>
+        <p class="font-11 under-heading text-center bottom-20">يجب ذكر السبب</p>
+        <p class="font-16 under-heading text-center bottom-20 red-text" id="err_msg_posponded"></p>
+        <div class="input-style input-style-1 input-required">
+          <span class="input-style-1-inactive">سبب التأجيل</span>
+          <textarea id="note_posponded" name="note_posponded" placeholder="سبب التأجيل"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="posponded()" class=" waves-effect waves-red btn-flat">تحديث حالة الطلب</button>
+        <button type="button" class="modal-close waves-effect waves-green btn-flat" data-dismiss="modal">اغلاق</button>
       </div>
     </div>
   </div>
@@ -201,7 +334,11 @@ include_once("config.php");
   </script>
   <script type="text/javascript" src="scripts/getCities.js"></script>
   <script type="text/javascript" src="scripts/getStores.js"></script>
+  <script type="text/javascript" src="scripts/getTowns.js"></script>
   <script>
+    getCities($("#city"));
+    getTowns($("#town"), 1);
+
     function getorder() {
       $.ajax({
         url: "php/_getOrder.php",
@@ -210,35 +347,36 @@ include_once("config.php");
 
         },
         data: {
-          id: $("#order_id").val()
+          id: $("#order_id").val(),
         },
         success: function(res) {
+          $("#order-details").html("");
           console.log(res);
           if (res.success == 1) {
             $.each(res.data, function() {
               $("#order-details").append(
-                '<h2 class="text-center right-10">' + this.order_status + '</h2>' +
-                '<h4 class="text-center">' + this.order_no + '</h4>' +
+                '<h1 class="text-center right-10">' + this.order_status + '</h1>' +
+                '<h3 class="text-center">' + this.order_no + '</h3>' +
                 '<table style="width:100%;" class="table-striped">' +
                 '</thead><tr><th class="text-right right-10">النص</th><th>القيمة</th></th></thead>' +
                 '<tbody>' +
                 '<tr><td class="text-right right-10">اسم الزبون</td><td>' + this.customer_name + '</td></tr>' +
-                '<tr><td class="text-right right-10">هاتف الزبون</td><td>' + this.customer_phone + '</td></tr>' +
-                '<tr><td class="text-right right-10">اسم الصفحه</td><td>' + this.store_name + '</td></tr>' +
-                '<tr><td class="text-right right-10">رقم هاتف العميل</td><td>' + this.client_phone + '</td></tr>' +
+                '<tr><td class="text-right right-10">هاتف الزبون</td><td><a href="tel:' + this.customer_phone + '">' + this.customer_phone + '</a></td></tr>' +
+                '<tr><td class="text-right right-10">اسم العميل</td><td>' + this.client_name + '</td></tr>' +
+                '<tr><td class="text-right right-10">رقم هاتف العميل</td><td><a href="tel:' + this.client_phone + '">' + this.client_phone + '</a></td></tr>' +
                 '<tr><td class="text-right right-10"><br />العنوان<br /></td><td>' + this.city + ' | ' + this.town + '<br />' + this.address + '</td></tr>' +
                 '<tr><td class="text-right right-10">مبلغ الوصل</td><td>' + this.price + '</td></tr>' +
                 '<tr><td class="text-right right-10">المبلغ المستلم</td><td>' + this.new_price + '</td></tr>' +
-                '<tr><td class="text-right right-10">سعر التوصيل</td><td>' + this.dev_price + '</td></tr>' +
-                '<tr><td class="text-right right-10">الخصم</td><td>' + this.discount + '</td></tr>' +
-                '<tr><td class="text-right right-10">المبلغ الصافي</td><td>' + this.client_price + '</td></tr>' +
                 '</tbody>' +
                 '</table>'
               );
+
+              $("#order_price").val("" + this.price + "");
+              $("#new_price").val("" + this.price + "");
             });
           } else {
             $("#order-details").append(
-              '<h1 class="text-danger text-center">لا يوجد معلومات</h1>'
+              '<h1>خطأ</h1>'
             );
           }
         },
@@ -252,6 +390,7 @@ include_once("config.php");
       OrderTracking($('#order_id').val());
       $(".modal").modal();
       $(".tabs").tabs();
+      $("select").formSelect();
       $("#tabs-swipe-demo").tabs({
         swipeable: true
       });
@@ -425,6 +564,434 @@ include_once("config.php");
         },
         error: function(e) {
           console.log(e);
+        }
+      });
+    }
+
+    function recived() {
+      if ($("#order_price").val() != $("#new_price").val()) {
+        if (confirm("السعر المدخل لا يساوي سعر الوصل. هل انت متاكد من السعر؟")) {
+          $.ajax({
+            url: "php/_orderRecived.php",
+            type: "POST",
+            beforeSend: function() {
+
+            },
+            data: {
+              id: $("#order_id").val(),
+              new_price: $("#new_price").val(),
+              note: $("#note").val(),
+            },
+            success: function(res) {
+              console.log(res);
+              $("#err_msg").html("");
+              if (res.success == 1) {
+                $("#recived").removeClass('menu-active');
+                M.toast({
+                  html: 'تم تحديث الحاله',
+                  classes: 'rounded teal lighten-2 white-text'
+                });
+                $('.modal').modal('close');
+                getorder();
+              } else {
+                $("#err_msg").html(res.error.new_price + "<br />" + res.error.note);
+              }
+            },
+            error: function(e) {
+              console.log(e);
+            }
+          });
+
+        } else {
+
+        }
+      } else {
+        $.ajax({
+          url: "php/_orderRecived.php",
+          type: "POST",
+          beforeSend: function() {
+
+          },
+          data: {
+            id: $("#order_id").val(),
+            new_price: $("#new_price").val(),
+            note: $("#note").val(),
+          },
+          success: function(res) {
+            console.log(res);
+            $("#err_msg").html("");
+            if (res.success == 1) {
+              $("#recived").removeClass('menu-active');
+              M.toast({
+                html: 'تم تحديث الحاله',
+                classes: 'rounded teal lighten-2 white-text'
+              });
+              $('.modal').modal('close');
+              getorder();
+            } else {
+              $("#err_msg").html(res.error.new_price + "<br />" + res.error.note);
+
+            }
+          },
+          error: function(e) {
+            console.log(e);
+          }
+        });
+      }
+    }
+
+    function change() {
+      $.ajax({
+        url: "php/_orderChange.php",
+        type: "POST",
+        beforeSend: function() {
+
+        },
+        data: {
+          id: $("#order_id").val(),
+          address: $("#address").val(),
+          town: $("#town").val(),
+          city: $("#city").val(),
+        },
+        success: function(res) {
+          console.log(res);
+          $("#err_msg_change").html("");
+          if (res.success == 1) {
+            $("#change").removeClass('menu-active');
+            M.toast({
+              html: 'تم تحديث الحاله',
+              classes: 'rounded teal lighten-2 white-text'
+            });
+            $('.modal').modal('close');
+            getorder();
+          } else {
+            $("#err_msg_change").html(res.error.address);
+
+          }
+        },
+        error: function(e) {
+          console.log(e);
+        }
+      });
+    }
+
+    function posponded() {
+      $.ajax({
+        url: "php/_orderPosponded.php",
+        type: "POST",
+        beforeSend: function() {
+
+        },
+        data: {
+          id: $("#order_id").val(),
+          note: $("#note_posponded").val()
+        },
+        success: function(res) {
+          console.log(res);
+          $("#err_msg_change").html("");
+          if (res.success == 1) {
+            $("#posponded").removeClass('menu-active');
+            M.toast({
+              html: 'تم تحديث الحاله',
+              classes: 'rounded teal lighten-2 white-text'
+            });
+            $('.modal').modal('close');
+            getorder();
+          } else {
+            $("#err_msg_posponded").html(res.error.address);
+
+          }
+        },
+        error: function(e) {
+          console.log(e);
+        }
+      });
+    }
+
+    function returned() {
+      $.ajax({
+        url: "php/_orderReturned.php",
+        type: "POST",
+        beforeSend: function() {
+
+        },
+        data: {
+          id: $("#order_id").val(),
+          new_price: $("#new_price_r").val(),
+          note: $("#note_r").val(),
+          items_no: $("#returned_no").val()
+        },
+        success: function(res) {
+          console.log(res);
+          $("#err_msg_change").html("");
+          if (res.success == 1) {
+            $("#returned").removeClass('menu-active');
+            M.toast({
+              html: 'تم تحديث الحاله',
+              classes: 'rounded teal lighten-2 white-text'
+            });
+            $('.modal').modal('close');
+            getorder();
+          } else {
+            $("#err_msg_returned1").html(res.error.new_price);
+            $("#err_msg_returned2").html(res.error.items_no);
+            $("#err_msg_returned3").html(res.error.note);
+
+          }
+        },
+        error: function(e) {
+          console.log(e);
+        }
+      });
+    }
+
+    function replace() {
+      $.ajax({
+        url: "php/_orderRepalce.php",
+        type: "POST",
+        beforeSend: function() {
+
+        },
+        data: {
+          id: $("#order_id").val(),
+          new_price: $("#new_price_re").val(),
+          note: $("#note_re").val(),
+          items_no: $("#repalce_no").val()
+        },
+        success: function(res) {
+          console.log(res);
+          $("#err_msg_change").html("");
+          if (res.success == 1) {
+            $("#replace").removeClass('menu-active');
+            M.toast({
+              html: 'تم تحديث الحاله',
+              classes: 'rounded teal lighten-2 white-text'
+            });
+            $('.modal').modal('close');
+            getorder();
+          } else {
+            $("#err_msg_replace1").html(res.error.new_price);
+            $("#err_msg_replace2").html(res.error.items_no);
+            $("#err_msg_replace3").html(res.error.note);
+
+          }
+        },
+        error: function(e) {
+          console.log(e);
+        }
+      });
+    }
+
+    function fake() {
+      $.ajax({
+        url: "php/_orderFake.php",
+        type: "POST",
+        beforeSend: function() {
+
+        },
+        data: {
+          id: $("#order_id").val(),
+          note: $("#note_fake").val()
+        },
+        success: function(res) {
+          console.log(res);
+          $("#err_msg_change").html("");
+          if (res.success == 1) {
+            $("#fake").removeClass('menu-active');
+            M.toast({
+              html: 'تم تحديث الحاله',
+              classes: 'rounded teal lighten-2 white-text'
+            });
+            $('.modal').modal('close');
+            getorder();
+          } else {
+            $("#err_msg_fake").html(res.error.note);
+
+          }
+        },
+        error: function(e) {
+          console.log(e);
+        }
+      });
+    }
+
+    function OrderTracking(id) {
+      $.ajax({
+        url: "php/_getOrderTrack.php",
+        data: {
+          id: id
+        },
+        beforeSend: function() {
+
+        },
+        success: function(res) {
+          $("#orderTimeline").html('');
+          $("#orderTimeline").append('<div class="timeline-deco"></div>');
+          console.log(res);
+          if (res.success == 1) {
+            $.each(res.data, function() {
+              address = "";
+              if (this.order_status_id == 1) {
+                icon = "fa-list";
+                color = "blue1-light";
+              } else if (this.order_status_id == 2) {
+                icon = "fa-list";
+                color = "blue1-light";
+              } else if (this.order_status_id == 3) {
+                icon = "fa-list";
+                color = "magenta2-dark";
+              } else if (this.order_status_id == 4) {
+                icon = "fa-list";
+                color = "green2-dark";
+              } else if (this.order_status_id == 5) {
+                icon = "fa-list";
+                color = "yellow2-dark";
+              } else if (this.order_status_id == 6) {
+                icon = "fa-list";
+                color = "red1-dark";
+              } else if (this.order_status_id == 7) {
+                icon = "fa-list";
+                color = "orange-dark";
+              } else if (this.order_status_id == 8) {
+                icon = "fa-list";
+                color = "blue1-dark";
+                address = "تغير العنوان الى: " + this.new_address;
+              } else if (this.order_status_id == 9) {
+                icon = "fa-list";
+                color = "brown1-dark";
+
+              } else {
+                icon = "fa-list";
+                color = "blue1-light";
+              }
+              if (this.note != null) {
+                note = this.note;
+              } else {
+                note = "";
+              }
+              $("#orderTimeline").append(
+                '<div class="timeline-item">' +
+                '<i class="fa ' + icon + ' bg-' + color + ' shadow-large timeline-icon"></i>' +
+                '<div class="timeline-item-content shadow-large round-small">' +
+                '<h5 class="thin color-' + color + ' center-text">' + this.status + '<br />' + this.date + '<br />' + this.hour + '</h5>' +
+                '<p class=" center-text color-theme  bottom-0 font-14">' + note + '</p>' +
+                '<p class="color-' + color + ' center-text color-theme top-5 bottom-0 font-14">عدد القطع: ' + this.items_no + '</p>' +
+                '<p class=" center-text color-theme top-20 bottom-0 font-16">' + address + '</p>' +
+                '</div>' +
+                '</div>'
+              );
+            });
+          } else {
+            $("#orderTimeline").append("<h2 class='text-center'>لا يوجد معلومات</h2>")
+          }
+        },
+        error: function(e) {
+          console.log(e);
+        }
+      });
+    }
+
+    function OrderChat(id, last) {
+      if (id != $("#chat_order_id").val()) {
+        chat = 1;
+        $("#chatbody").html("");
+      } else {
+        chat = 0;
+      }
+      $("#chat_order_id").val(id);
+
+      $.ajax({
+        url: "php/_getMessages.php",
+        type: "POST",
+        data: {
+          order_id: $("#chat_order_id").val(),
+          last: last
+        },
+        beforeSend: function() {
+
+        },
+        success: function(res) {
+          if (res.success == 1) {
+            if (res.last <= 0) {
+              $("#chatbody").html("");
+            }
+            $.each(res.data, function() {
+              clas = 'other';
+              if (this.is_client == 1) {
+                name = this.client_name
+                role = "عميل"
+                if (this.from_id == $("#user_id").val()) {
+                  clas = 'mine';
+                }
+              } else {
+                name = this.staff_name
+                if (this.from_id == $("#user_id").val()) {
+                  clas = 'mine';
+                }
+                role = this.role_name;
+              }
+              message =
+                "<div class='row'>" +
+                "<div class='msg " + clas + "' msq-id='" + this.id + "'>" +
+                "<span class='name'>" + name + " ( " + role + " ) " + "</span><br />" +
+                "<span class='content'>" + this.message + "</span><br />" +
+                "<span class='time'>" + this.date + "</span><br />" +
+                "</div>" +
+                "</div>"
+              $("#chatbody").append(message);
+              $("#last_msg").val(this.id);
+            });
+            $("#chatbody").animate({
+              scrollTop: $('#chatbody').prop("scrollHeight")
+            }, 100);
+            //$("#spiner").remove();
+          }
+        },
+        error: function(e) {
+          console.log(e);
+        }
+      });
+    }
+
+    function sendMessage() {
+      $.ajax({
+        url: "php/_sendMessage.php",
+        type: "POST",
+        data: {
+          message: $("#message").val(),
+          order_id: $("#chat_order_id").val()
+        },
+        beforeSend: function() {
+          $("#chatbody").append('<div id="spiner" class="spiner"></div>');
+        },
+        success: function(res) {
+          OrderChat($("#chat_order_id").val(), $("#last_msg").val());
+          $("#chatbody").animate({
+            scrollTop: $('#chatbody').prop("scrollHeight")
+          }, 100);
+          $("#message").val("");
+          $("#message").focus();
+        },
+        error: function(e) {
+          console.log(e);
+        }
+      });
+    }
+    var mychatCaller;
+    mychatCaller = setInterval(function() {
+      OrderChat($("#chat_order_id").val(), $("#last_msg").val());
+    }, 1000);
+    OrderTracking($('#order_id').val())
+    getorder();
+    if ($("#notification_seen_id").val() > 0) {
+      $.ajax({
+        url: "php/_setNotificationSeen.php",
+        type: "POST",
+        data: {
+          id: $("#notification_seen_id").val()
+        },
+        success: function(res) {
+          console.log(res);
         }
       });
     }

@@ -218,7 +218,7 @@ include_once("config.php");
         $("#currentPage").val(1);
       }
       $.ajax({
-        url: "php/_getPospondedOrders.php",
+        url: "php/_getRecivedOrders.php",
         type: "POST",
         data: $("#searchForm").serialize(),
         beforeSend: function() {
