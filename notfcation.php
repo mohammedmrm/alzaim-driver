@@ -1,24 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, viewport-fit=cover" />
-    <meta name="description" content="في هذه الصفحة الرئيسية <?php echo $config['Company_name'];?> تستطيع ان تتعرف على الطلبيات الخاصة بك الواصة والراجعة والكثير من المعلومات">
-    <meta name="<?php echo $config['Company_name'];?>" property="og:title" content="معلومات متكاملة للعميل في هذه الصفحة خاصة بعملاء  <?php echo $config['Company_name'];?>">
+<?php require_once('head.php'); ?>
 
-    <title><?php echo $config['Company_name'];?></title>
-<link href="https://fonts.googleapis.com/css?family=Cairo:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-<link rel="stylesheet" type="text/css" href="styles/framework.css">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
-<link rel="apple-touch-icon" sizes="180x180" href="pwa/apple-touch-icon.png">
-<link rel="manifest" href="pwa/site.webmanifest">
-
-</head>
-
-<body class="theme-light" data-background="none" data-highlight="red2">
+<body class="html" <?php echo $config['theme-config']; ?>>
 <style type="text/css">
 .bg-div1 {
  background-color: #CC0011;
@@ -36,70 +20,160 @@
  background-color: #CC4455;
 }
 .unseen{
-  background-color: #E6E6FA;
+  background-color: #66CCCC;
+  line-height: 1.2rem;
+  padding: 10px 20px;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
 }
+.seen  {
+  background-color: #FFFFFF ;
+  line-height: 1.2rem;
+  padding: 10px 20px;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.unseen a , .seen a{
+ color: #000000;
+}
+
 .active-nav label {
     color: #FFFFFF!important;
 }
 </style>
 <script type="text/javascript" src="scripts/jquery.js"></script>
-<div id="page">
+
 
     <?php include_once("pre.php");  ?>
     <?php include_once("top-menu.php");  ?>
-    <?php include_once("bottom-menu.php");  ?>
+  </li>
+  <li class="copy-spacer"></li>
+  <li class="copy-wrap">
+    <div class="copyright">&copy; Copyright @ themepassion</div>
 
-    <div class="page-content header-clear-medium">
+
+
+    </ul>
+    <!-- END navigation -->
+
+
+
+  </li>
+  </ul>
+  <div class="container">
+    <div class="section">
+      <!-- <button type="button" class="waves-effect waves-light btn red lighten-2 col s12 ">محادثه</button> -->
+      <div class="divider"></div>
+    </div>
+  </div>
+  <!-- ============================= -->
+  <div class="container">
+    <div class="section">
         <div data-height="100" class="caption shadow-large caption-margins top-30 round-medium shadow-huge">
-            <div class="caption-top top-10">
-                <h2 class="center-text color-white bolder fa-4x" id="noti-count"></h2>
+                <div class="caption-top top-10">
+                    <h2 class="center-text color-white bolder fa-4x" id="noti-count"></h2>
+                </div>
+                <div class="caption-overlay bg-black opacity-80"></div>
+                <div class="caption-bg bg-14"></div>
             </div>
-            <div class="caption-overlay bg-black opacity-80"></div>
-            <div class="caption-bg bg-14"></div>
-        </div>
-        <div id="noti_menu">
+            <select class="form-control" style="width: 90%;margin-right: 2 rem" id="seen" onchange="getNotification()">
+                   <option value="">الكل</option>
+                   <option value="1">مرئي</option>
+                   <option value="2">غير مرئي</option>
+                </select>
+            <hr />
+            <ul class="notifications">
+            <div id="noti_menu">
 
-        </div>
+            </div>
+            </ul>
+    </div>
+  </div>
+<?php include_once('footer.php'); ?>
+<?php include_once('bottom-menu.php'); ?>
+  <!-- PWA Service Worker Code -->
+
+  <script type="text/javascript">
+    // This is the "Offline copy of pages" service worker
+
+    // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+    // Check compatibility for the browser we're running this in
+    if ("serviceWorker" in navigator) {
+      if (navigator.serviceWorker.controller) {
+        console.log("[PWA Builder] active service worker found, no need to register");
+      } else {
+        // Register the service worker
+        navigator.serviceWorker
+          .register("pwabuilder-sw.js", {
+            scope: "./"
+          })
+          .then(function(reg) {
+            console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+          });
+      }
+    }
+  </script>
+  <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+
+  <!-- CORE JS FRAMEWORK - START -->
+  <script src="assets/js/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/materialize.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <!-- CORE JS FRAMEWORK - END -->
 
 
-</div>
+  <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".tabs").tabs();
+      $("select").formSelect();
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+      $('.preloader-background').delay(10).fadeOut('slow');
+    });
+  </script>
+  <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
-</div>
-<script type="text/javascript" src="scripts/plugins.js"></script>
-<script type="text/javascript" src="scripts/custom.js"></script>
-<script type="text/javascript" src="sw_reg.js"></script>
 
+  <!-- CORE TEMPLATE JS - START -->
+  <script src="assets/js/init.js"></script>
+  <script src="assets/js/settings.js"></script>
+  <script src="assets/js/scripts.js"></script>
+
+  <!-- END CORE TEMPLATE JS - END -->
 <script>
-
 function getNotification(){
     $.ajax({
     url:"php/_getNotification.php",
     beforeSend:function(){
     },
+    data:{
+      seen:$("#seen").val()
+    },
     success:function(res){
       console.log(res);
       if(res.success == 1){
         $("#noti-count").text(res.unseen + ' اشعار جديد');
+        $("#noti_menu").html("");
         $.each(res.data,function(){
-          if(this.client_seen == 0){
+          if(this.driver_seen == 0){
             bg = 'unseen';
           }else{
-            bg = "";
+            bg = "seen";
           }
          $("#noti_menu").append(
-            '<div class="content-boxed content-boxed-full">'+
-                '<a data-height="100" class="default-link default-link caption bottom-0" style="height: 100px;" href="orderDetails.php?o='+this.order_id+'&notification='+this.id+'" title="">'+
-                    '<div class="caption-bottom right-20 bottom-5 text-right">'+
-                        '<h3 class="bolder font-16">'+this.title+' ('+this.order_no+')'+'</h3>'+
-                        '<p class="under-heading font-14 opacity-90 bottom-0">'+
-                               this.body+
-                        '</p>'+
-                        '<span class="font-14 opacity-90 bottom-0">'+this.date+'</span>'+
-                    '</div>'+
-                    '<div class="caption-overlay '+bg+' opacity-70"></div>'+
-                    '<div class="caption-bg bg-25"></div>'+
-                '</a>'+
-            '</div>'
+           `
+             <li class="`+bg+`">
+              <a href="orderDetails.php?o=`+this.order_id+`&notification=`+this.id+`">
+              <div class="notify">
+                  <h4>`+this.title+' ('+this.order_no+')'+`</h4>
+                  <p>`+this.body+`</p>
+                  <p style="direction: ltr !important; text-align: left;font-size:12px;">`+this.date+`</p>
+              </div>
+              </a>
+            </li>
+            `
          );
         });
       }
