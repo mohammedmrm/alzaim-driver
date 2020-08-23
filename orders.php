@@ -64,11 +64,11 @@ include_once("config.php");
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <input type="text" name="start" id="end" class="datepicker end">
+                <input type="text" name="end" id="end" class="datepicker end">
                 <label for="end" class="black-text">الى</label>
               </div>
               <div class="input-field col s6">
-                <input type="text" name="end" id="start" placeholder="من" class="datepicker start">
+                <input type="text" name="start" id="start" placeholder="من" class="datepicker start">
                 <label for="start" class="black-text">من</label>
               </div>
             </div>
