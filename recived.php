@@ -73,7 +73,7 @@ include_once("config.php");
               </div>
             </div>
             <button onclick="getorders('reload')" type="button" class="waves-effect waves-light btn-large green lighten-2 col s12">بحث</button>
-
+            <input type="hidden" name="currentPage" id="currentPage" value="1"> 
         </div>
       </div>
       </form>

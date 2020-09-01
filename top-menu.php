@@ -1,5 +1,8 @@
 <?php require_once("config.php") ?>
 <style type="text/css">
+  select {
+      display: inline-block;
+  }
   a:hover {
     text-underline: none;
   }
