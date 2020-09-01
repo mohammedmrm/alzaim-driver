@@ -13,6 +13,7 @@
     font-size:12px;
   }
  </style>
+ <script type="text/javascript" src="scripts/jquery.js"></script>  
  <div class="footer-menu">
    <ul>
 
@@ -66,14 +67,14 @@ newNotification();
 
 var page = document.location.pathname.match(/[^\/]+$/)[0];
 if(page == 'notfcation.php'){
-  $('[href="notfcation.php"]').addClass("active");
+   $('[href="notfcation.php"]').addClass("active");
 }else if(page == 'profile.php'){
-  $('[href="profile.php"]').addClass("active");
-}else if(page == 'index.php' || page == ''){
+   $('[href="profile.php"]').addClass("active");
+}else if(page == 'index.php'){
    $('[href="index.php"]').addClass("active");
-}else if(page == 'recived.php' || page == ''){
+}else if(page == 'recived.php'){
    $('[href="recived.php"]').addClass("active");
-}else if(page == 'returned.php' || page == ''){
+}else if(page == 'returned.php'){
    $('[href="returned.php"]').addClass("active");
 }
 </script>
