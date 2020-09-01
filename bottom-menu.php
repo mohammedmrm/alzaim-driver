@@ -2,13 +2,22 @@
    .footer-menu li {
      width: 25% !important;
    }
+  #noti-new {
+    background-color: #DC143C;
+    color:#FFFFFF;
+    border-radius: 50px;
+    height: 22px;
+    min-width: 0px !important;
+    padding-left: 6px;
+    padding-right: 6px;
+  }   
  </style>
  <div class="footer-menu">
    <ul>
 
      <li>
        <a href="notfcation.php"> <i class="mdi mdi-shape-outline"></i>
-         <span>الاشعارات</span>
+         <span>الاشعارات<label id="noti-new"></label> </span>
        </a> 
       </li>
      <li>
@@ -34,3 +43,32 @@
 
    </ul>
  </div>
+ <script>
+function newNotification(){
+    $.ajax({
+    url:"php/_getNotification.php",
+    success:function(res){
+      console.log(res);
+      if(res.unseen != 0){
+        $("#noti-new").text(res.unseen);
+      }else{
+        $("#noti-new").text("");
+        $("#noti-new").css('padding','0px');
+      }
+    },
+    error:function(e){
+      console.log(e,'it for noti');
+    }
+  });
+}
+newNotification();
+
+var page = document.location.pathname.match(/[^\/]+$/)[0];
+if(page == 'notfcation.php'){
+  $('[href="notfcation.php"]').addClass("active-nav");
+}else if(page == 'profile.php'){
+  $('[href="profile.php"]').addClass("active-nav");
+}else if(page == 'index.php'){
+   $('[href="index.php"]').addClass("active-nav");
+}
+</script>

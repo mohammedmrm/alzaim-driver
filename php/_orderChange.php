@@ -42,14 +42,12 @@ if($v->passes()) {
     $sql = "select staff.token as s_token, clients.token as c_token from orders inner join staff
             on
             staff.id = orders.manager_id
-            or
-            staff.id = orders.driver_id
             inner join clients on clients.id = orders.client_id
             where orders.id =  ?";
     $res =getData($con,$sql,[$order_id]);
     $sql = "update orders set driver_id=?,to_city=?,to_town=? where id=?";
     setData($con,$sql,[$driver[0]['driver_id'],$city,$town,$order_id]);
-    sendNotification([$res[0]['s_token'],$res[1]['s_token'],$res[0]['c_token']],[$order_id],'طلب رقم  ',"تغير عنوان الطلب - ".$note,"../orderDetails.php?o=".$order_id);
+    sendNotification([$res[0]['s_token'],$res[0]['c_token']],[$order_id],'طلب رقم  ',"تغير عنوان الطلب - ".$note,"../orderDetails.php?o=".$order_id);
    }else{
      $error['address'] = "لايمكن تحديث الحالة";
    }

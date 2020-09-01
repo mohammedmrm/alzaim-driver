@@ -68,8 +68,6 @@ if($v->passes() && empty($note_err)){
     $sql = "select staff.token as s_token, clients.token as c_token from orders inner join staff
             on
             staff.id = orders.manager_id
-            or
-            staff.id = orders.driver_id
             inner join clients on clients.id = orders.client_id
             where orders.id =  ?";
     $res =getData($con,$sql,[$order_id]);
