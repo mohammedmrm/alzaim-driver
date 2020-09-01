@@ -8,9 +8,10 @@
     border-radius: 50px;
     height: 22px;
     min-width: 0px !important;
-    padding-left: 6px;
-    padding-right: 6px;
-  }   
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size:12px;
+  }
  </style>
  <div class="footer-menu">
    <ul>
