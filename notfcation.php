@@ -127,7 +127,6 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $(".tabs").tabs();
-      $("select").formSelect();
     });
     document.addEventListener("DOMContentLoaded", function() {
       $('.preloader-background').delay(10).fadeOut('slow');

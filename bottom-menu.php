@@ -13,7 +13,7 @@
     font-size:12px;
   }
  </style>
- <script type="text/javascript" src="scripts/jquery.js"></script>  
+ <script type="text/javascript" src="scripts/jquery.js"></script>
  <div class="footer-menu">
    <ul>
 
@@ -23,7 +23,7 @@
        </a> 
       </li>
      <li>
-       <a href="returned.php"> <i class="mdi mdi-home-outline"></i>
+       <a href="returned.php"> <i class="mdi mdi-backup-restore"></i>
          <span>الرواجع</span>
        </a>
      </li>
@@ -33,14 +33,14 @@
        </a>
      </li>
      <li>
-       <a href="recived.php"> <i class="mdi mdi-laptop"></i>
+       <a href="recived.php"> <i class="mdi mdi-checkbox-multiple-marked-circle-outline"></i>
          <span>الواصل</span>
        </a>
      </li>
      <!-- <li>
        <a href="earnings.php"> <i class="mdi mdi-flask-outline"></i>
          <span>الكشوفات</span>
-       </a> 
+       </a>
       </li> -->
 
    </ul>
