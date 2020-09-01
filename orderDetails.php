@@ -510,7 +510,6 @@ include_once("config.php");
       OrderTracking($('#order_id').val());
       $(".modal").modal();
       $(".tabs").tabs();
-      $("select").formSelect();
       $("#tabs-swipe-demo").tabs({
         swipeable: true
       });
