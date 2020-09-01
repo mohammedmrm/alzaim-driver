@@ -66,10 +66,14 @@ newNotification();
 
 var page = document.location.pathname.match(/[^\/]+$/)[0];
 if(page == 'notfcation.php'){
-  $('[href="notfcation.php"]').addClass("active-nav");
+  $('[href="notfcation.php"]').addClass("active");
 }else if(page == 'profile.php'){
-  $('[href="profile.php"]').addClass("active-nav");
-}else if(page == 'index.php'){
-   $('[href="index.php"]').addClass("active-nav");
+  $('[href="profile.php"]').addClass("active");
+}else if(page == 'index.php' || page == ''){
+   $('[href="index.php"]').addClass("active");
+}else if(page == 'recived.php' || page == ''){
+   $('[href="recived.php"]').addClass("active");
+}else if(page == 'returned.php' || page == ''){
+   $('[href="returned.php"]').addClass("active");
 }
 </script>
