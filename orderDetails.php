@@ -781,7 +781,7 @@ include_once("config.php");
               html: 'تم تحديث الحاله',
               classes: 'rounded teal lighten-2 white-text'
             });
-            $('.modal').modal('close');
+            $('.modal').modal('close'); 
             getorder();
           } else {
             $("#err_msg_change").html(res.error.address);

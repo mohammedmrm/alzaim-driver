@@ -11,13 +11,13 @@ $start = date('Y-m-d',strtotime(' - 1 day'));
 $start .=' 12:00:00';
 $end= date('Y-m-d',strtotime(' + 1 day'));
 $sql = "SELECT
-          SUM(IF (order_status_id = '3',1,0)) as  waiting,
+          SUM(IF (order_status_id = '1' or order_status_id = '2' or order_status_id = '3',1,0)) as  waiting,
           SUM(IF (order_status_id = '4',1,0)) as  recived,
           count(order_no) as  today,
           SUM(IF (order_status_id = '6' or order_status_id = '9',1,0)) as  returned,
           SUM(IF (order_status_id = '7',1,0)) as  posponded
           FROM orders
-          where update_date between '".$start."' and '".$end."'
+          where driver_invoice_id = 0
           and driver_id='".$_SESSION['userid']."' and confirm=1";
 $result = getData($con,$sql);
 $sql = "SELECT
