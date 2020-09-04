@@ -42,7 +42,7 @@
                     <span id="logo-container" href="index.php" class="gray-text center-text"><?php echo $config['Company_name']; ?></span>
                 </div>
                 <div class="col s12 text-center">
-                    <img width="250px" src="img/logos/logo.png" />
+                    <img width="250px" src="../dash/img/logos/logo.png" />
                 </div>
             </div>
         </div>
@@ -136,14 +136,10 @@
     <script src="assets/js/scripts.js"></script>
 
     <!-- END CORE TEMPLATE JS - END -->
-
-
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function() {
             $('.preloader-background').delay(10).fadeOut('slow');
         });
-    </script>
-    <script>
         function login() {
             $.ajax({
                 url: "php/_login.php",

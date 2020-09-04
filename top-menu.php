@@ -17,6 +17,7 @@
 
 
     <a onclick="logout()" href="logout.php" class="waves-effect waves-circle navicon right nav-site-mode show-on-large"><i class="mdi mdi-logout-variant"></i></a>
+    <a  class="waves-effect black-text  right nav-site-mode"><?php echo '&nbsp;&nbsp;&nbsp;'.$_SESSION['user_details']['name'];?></a>
   </div>
 </nav>
 <ul id="slide-nav" class="sidenav sidemenu">
