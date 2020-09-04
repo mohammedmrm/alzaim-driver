@@ -35,10 +35,7 @@ include_once("config.php");
     .fa-2x *{
       font-size:18px;
     }
-.carousel.carousel-fullscreen .carousel-item .item-content {
-   padding: 0%;
 
-}
 </style>
 
 <body class="html" <?php echo $config['theme-config']; ?>>
