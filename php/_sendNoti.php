@@ -8,7 +8,7 @@
               $sql = "insert into notification (title,body,for_client,staff_id,client_id,order_id)
               values(?,?,?,?,?,?)";
               $res = setData($con,$sql,[$title,$body,0,$result[0]['manager_id'],0,$order]);
-              //$res = setData($con,$sql,[$title,$body,0,$result[0]['driver_id'],0,$order]);
+              $res = setData($con,$sql,[$title,$body,0,$result[0]['driver_id'],0,$order]);
               $res = setData($con,$sql,[$title,$body,1,0,$result[0]['client_id'],$order]);
             }
      }
