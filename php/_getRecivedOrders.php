@@ -27,12 +27,14 @@ try{
   $count = "select count(*) as count from orders
            left join driver_invoice on  driver_invoice.id = orders.driver_invoice_id
            ";
-  $query = "select orders.*,DATEDIFF('".date('Y-m-d')."', date_format(orders.date,'%Y-%m-%d')) as days,
-            clients.name as client_name,clients.phone as client_phone,
+  $query = "select orders.*,stores.name as store_name,
+            clients.name as client_name,
+            if(isfrom = 2 and orders.remote_client_phone is not null,remote_client_phone,clients.phone) as client_phone,
             cites.name as city,towns.name as town,branches.name as branch_name
             from orders left join
             clients on clients.id = orders.client_id
             left join cites on  cites.id = orders.to_city
+            left join stores on  stores.id = orders.store_id
             left join towns on  towns.id = orders.to_town
             left join branches on  branches.id = orders.to_branch
             left join driver_invoice on  driver_invoice.id = orders.driver_invoice_id
@@ -86,5 +88,5 @@ if($success == '1'){
     }
   }
 }
-print_r(json_encode(array('orders'=>$ps[0]['count'],"success"=>$success,"data"=>$data,'pages'=>$pages,'nextPage'=>$page+2)));
+print_r(json_encode(array($query,'orders'=>$ps[0]['count'],"success"=>$success,"data"=>$data,'pages'=>$pages,'nextPage'=>$page+2)));
 ?>

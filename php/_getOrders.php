@@ -28,7 +28,9 @@ try{
              left join driver_invoice on  driver_invoice.id = orders.driver_invoice_id
             ";
   $query = "select orders.*,DATEDIFF('".date('Y-m-d')."', date_format(orders.date,'%Y-%m-%d')) as days,
-            clients.name as client_name,clients.phone as client_phone,stores.name as store_name,
+            clients.name as client_name,
+            if(isfrom = 2 and orders.remote_client_phone is not null,remote_client_phone,clients.phone) as client_phone,
+            stores.name as store_name,
             cites.name as city,towns.name as town,branches.name as branch_name
             from orders left join
             clients on clients.id = orders.client_id
@@ -39,7 +41,7 @@ try{
             left join driver_invoice on  driver_invoice.id = orders.driver_invoice_id
             ";
   $where = "where";
-  $filter = "orders.driver_id =".$_SESSION['userid']."  and orders.confirm=1 and  (order_status_id = 1 or order_status_id = 2 or order_status_id = 3 or order_status_id = 13) and (driver_invoice_id=0)";
+  $filter = "orders.driver_id =".$_SESSION['userid']."  and orders.confirm=1 and  (order_status_id = 1 or order_status_id = 2 or order_status_id = 3 or order_status_id = 13 or order_status_id = 8) and (driver_invoice_id=0)";
   if(!empty($search)){
    $filter .= " and (order_no like '%".$search."%'
                     or customer_name like '%".$search."%'
