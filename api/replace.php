@@ -73,6 +73,11 @@ function httpPost($url, $data)
 }
 if($v->passes()) {
    try{
+    $autosql = "SELECT * FROM `tracking`  WHERE order_id =? order by  date DESC limit 1";
+    $auto = getData($con, $autosql, [$order_id]);
+    if ($auto[0]['staff_id'] == 1) {
+      $msg = "لايمكن تحديث الحالة. محدث تلقائياً";
+    } else {
    $sql = 'update orders set order_status_id =?,new_price=?, storage_id=0 where id=? and driver_id=? and driver_invoice_id=0 and storage_id=0 and invoice_id=0';
    $result = setData($con,$sql,['5',$new_price,$order_id,$id]);
    if($result > 0){
@@ -107,6 +112,7 @@ if($v->passes()) {
          $success="0";
          $msg ="Query Error";
   }
+}
 }else{
   $error = [
            'id'=> implode($v->errors()->get('id')),
